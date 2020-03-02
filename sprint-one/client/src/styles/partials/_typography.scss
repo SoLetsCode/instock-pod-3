@@ -1,0 +1,62 @@
+//DESK & TABLET TEXT STYLES
+//H1 - Hero Header
+@mixin dt-font-hero-h1 {
+  font-size: 60px;
+  line-height: 68px;
+}
+//H1 - Header
+@mixin dt-font-h1 {
+  font-size: 36px;
+  line-height: 44px;
+}
+//H2 - Header
+@mixin dt-font-h2 {
+  font-size: 24px;
+  line-height: 32px;
+}
+//H3 - Subheader
+@mixin dt-font-h3 {
+  font-size: 16px;
+  line-height: 24px;
+}
+//H4 - Paragraph & comments
+@mixin dt-font-p {
+  font-size: 14px;
+  line-height: 22px;
+}
+//H4 - Lists & contact information
+@mixin dt-font-li {
+  font-size: 14px;
+  line-height: 20px;
+}
+//H5 - LABELS
+@mixin dt-font-label {
+  font-size: 12px;
+  line-height: 20px;
+}
+//MOBILE TEXT STYLES
+//H1 - Header
+@mixin m-font-h1 {
+  font-size: 24px;
+  line-height: 32px;
+}
+//H2 - Subheader
+@mixin m-font-h2 {
+  font-size: 14px;
+  line-height: 22px;
+}
+//H4 - Paragraph
+@mixin m-font-p {
+  font-size: 13px;
+  line-height: 18px;
+}
+//H4 - Lists & contact information
+@mixin m-font-li {
+  font-size: 13px;
+  line-height: 18px;
+}
+//H5 - LABELS
+@mixin m-font-label {
+  font-size: 12px;
+  line-height: 20px;
+}

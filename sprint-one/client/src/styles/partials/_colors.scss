@@ -1,0 +1,27 @@
+//general
+$black: #323232;
+$instock-blue: #004892;
+$brainflix-blue-light: #0095ff;
+$silver: #afafaf;
+$instock-blue-dark: #002f5f;
+$brainflix-blue-medium: #0065ad;
+$mercury: #e1e1e1;
+$alabaster: #fafafa;
+
+//Global:
+$paragraph_text_color: $black;
+$text_label_style_color: $silver;
+$text_field_border_color: $mercury;
+$text_field_background_color: $alabaster;
+
+//Instock Colors:
+$instock_nav_bg_color: $black;
+$instock_primary_cta_color: $instock-blue;
+$instock_text_link_color: $instock-blue;
+$instock_primary_cta_hover_color: $instock-blue-dark;
+
+//BrainFlix:
+$brainflex_nav_bg_color: #323232;
+$brainflex_primary_cta_color: #0095ff;
+$brainflex_primary_text_link_color: #0095ff;
+$brainflex_primary_cta_hover_color: #0065ad;

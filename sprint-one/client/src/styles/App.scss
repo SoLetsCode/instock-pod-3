@@ -1,0 +1,21 @@
+@import "./partials/font";
+@import "./partials/typography";
+@import "./partials/breakpoints";
+@import "./partials/colors";
+
+/* reset the page */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #323232;
+  font-family: avenir;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
