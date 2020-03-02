@@ -3,9 +3,16 @@ import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./styles/App.css";
 
+import Locations from "./components/locations";
+
 class App extends Component {
   render() {
-    return <div className="App">Instock</div>;
+    return (
+      <div className="App">
+        Instock
+        <Locations />
+      </div>
+    );
   }
 }
 

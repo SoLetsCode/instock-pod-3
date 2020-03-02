@@ -13,6 +13,19 @@
   src: url("../assets/font/AvenirNextLTPro-Bold.otf");
 }
 
+.main {
+  margin: 10px;
+  border: 1px dotted rebeccapurple;
+}
+
+.locations {
+  background-color: gainsboro;
+}
+
+.locations__title {
+  background-color: grey;
+}
+
 /* reset the page */
 html,
 body {

@@ -1,0 +1,12 @@
+.main {
+  margin: 10px;
+  border: 1px dotted rebeccapurple;
+}
+
+.locations {
+  background-color: gainsboro;
+
+  &__title {
+    background-color: grey;
+  }
+}
