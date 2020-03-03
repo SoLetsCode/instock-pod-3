@@ -1,12 +1,81 @@
 .main {
-  margin: 10px;
-  border: 1px dotted rebeccapurple;
+  margin: 20px;
+  border: 1px dotted grey;
 }
 
 .locations {
-  background-color: gainsboro;
+  color: $black;
+
+  @include m-font-p;
+  margin: 10px;
+  border: 10px solid seagreen;
+
+  &__header-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    margin: 10px;
+    border: 10px solid orangered;
+  }
+
+  &__data-wrapper {
+    margin: 10px;
+    border: 10px solid orangered;
+  }
 
   &__title {
-    background-color: grey;
+    @include m-font-h1;
+
+    margin: 10px;
+    border: 10px solid blue;
+  }
+
+  &__search {
+    margin: 10px;
+    border: 10px solid blue;
+  }
+
+  &__data-header {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px;
+    border: 10px solid yellow;
+  }
+  &__data-body {
+    margin: 10px;
+    border: 10px solid yellow;
+  }
+  &__data-segment {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 10px;
+    border: 10px solid black;
+  }
+
+  @include tablet {
+    @include dt-font-p;
+
+    &__header-wrapper {
+      flex-direction: row;
+
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__data-wrapper {
+    }
+
+    &__title {
+      @include dt-font-h1;
+    }
+  }
+
+  @include desktop {
+    &__header-wrapper {
+    }
   }
 }

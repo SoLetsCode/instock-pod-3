@@ -14,16 +14,101 @@
 }
 
 .main {
-  margin: 10px;
-  border: 1px dotted rebeccapurple;
+  margin: 20px;
+  border: 1px dotted grey;
 }
 
 .locations {
-  background-color: gainsboro;
+  color: #323232;
+  font-size: 13px;
+  line-height: 18px;
+  margin: 10px;
+  border: 10px solid seagreen;
+}
+
+.locations__header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 10px;
+  border: 10px solid orangered;
+}
+
+.locations__data-wrapper {
+  margin: 10px;
+  border: 10px solid orangered;
 }
 
 .locations__title {
-  background-color: grey;
+  font-size: 24px;
+  line-height: 32px;
+  margin: 10px;
+  border: 10px solid blue;
+}
+
+.locations__search {
+  margin: 10px;
+  border: 10px solid blue;
+}
+
+.locations__data-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px;
+  border: 10px solid yellow;
+}
+
+.locations__data-body {
+  margin: 10px;
+  border: 10px solid yellow;
+}
+
+.locations__data-segment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 10px;
+  border: 10px solid black;
+}
+
+@media only screen and (min-width: 767px) {
+  .locations {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .locations__header-wrapper {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .locations__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 /* reset the page */
