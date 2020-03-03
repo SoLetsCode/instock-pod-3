@@ -6,17 +6,21 @@ const locations = () => {
       <section className="locations">
         <header className="locations__header-wrapper">
           <h2 className="locations__title">Locations</h2>
-          <input type="text" className="locations__search" />
+          <input
+            type="text"
+            className="locations__search"
+            placeholder="Search"
+          />
         </header>
 
-        <section className="locations__data-wrapper">
-          <section className="locations__data-header">
-            <span>WAREHOUSE</span>
-            <span>CONTACT</span>
-            <span>CONTACT INFORMATION</span>
-            <span>CATEGORIES</span>
-          </section>
+        <section className="locations__data-header">
+          <span>WAREHOUSE</span>
+          <span>CONTACT</span>
+          <span>CONTACT INFORMATION</span>
+          <span>CATEGORIES</span>
+        </section>
 
+        <section className="locations__data-wrapper">
           <section className="locations__data-body">
             <section className="locations__data-segment">
               <div className="locations__data-warehouse-info">
