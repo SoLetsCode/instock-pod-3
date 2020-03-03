@@ -1,11 +1,24 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import axios from "axios";
 import "./styles/App.css";
+import Header from "./components/Header";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect
+} from "react-router-dom";
 
 class App extends Component {
   render() {
-    return <div className="App">Instock</div>;
+    return (
+      <>
+        <Router>
+          <Header />
+          <div className="App">Instock</div>
+        </Router>
+      </>
+    );
   }
 }
 
