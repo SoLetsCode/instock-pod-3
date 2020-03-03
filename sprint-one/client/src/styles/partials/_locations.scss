@@ -1,59 +1,68 @@
 .main {
   margin: 20px;
-  border: 1px dotted grey;
 }
 
 .locations {
   color: $black;
 
   @include m-font-p;
-  margin: 10px;
-  border: 10px solid seagreen;
 
   &__header-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-
-    margin: 10px;
-    border: 10px solid orangered;
   }
 
   &__data-wrapper {
-    margin: 10px;
-    border: 10px solid orangered;
+  }
+
+  &__data-warehouse-info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+
+  &__data-contact-person {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+
+  &__data-contact-info {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+  }
+
+  &__locations__data-categories {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
   }
 
   &__title {
     @include m-font-h1;
-
-    margin: 10px;
-    border: 10px solid blue;
   }
 
   &__search {
-    margin: 10px;
-    border: 10px solid blue;
   }
 
   &__data-header {
     display: flex;
     justify-content: space-between;
-
-    margin: 10px;
-    border: 10px solid yellow;
+    display: none;
   }
+
   &__data-body {
-    margin: 10px;
-    border: 10px solid yellow;
   }
   &__data-segment {
-    display: flex;
-    justify-content: space-between;
+    border-bottom: 1px solid #afafaf;
 
-    margin: 10px;
-    border: 10px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
 
   @include tablet {
@@ -67,6 +76,10 @@
     }
 
     &__data-wrapper {
+    }
+
+    &__data-header {
+      display: block;
     }
 
     &__title {
