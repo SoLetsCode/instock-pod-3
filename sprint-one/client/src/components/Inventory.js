@@ -1,6 +1,7 @@
 import React from "react";
 import magImg from "../assets/icons/SVG/icon-search.svg";
 import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
+import addImg from "../assets/icons/SVG/icon-add.svg";
 
 function Inventory({ product }) {
   //expects product with the following keys [id, name, description, lastOrder, location, quantity]
@@ -38,8 +39,10 @@ function Inventory({ product }) {
             </p>
           </div>
         </div>
-
-        <img src={kebabImg} alt="kebab" className="inventory__kebab" />
+        <div className="inventory__kebab-remove-container">
+          <img src={kebabImg} alt="kebab" className="inventory__kebab" />
+          <div className="inventory__remove">Remove</div>
+        </div>
       </div>
     );
   });
@@ -61,6 +64,9 @@ function Inventory({ product }) {
         </form>
       </header>
       <div>{inventory}</div>
+      <div className="inventory__add-button">
+        <img src={addImg} alt="add button" className="inventory__add-img" />
+      </div>
     </div>
   );
 }

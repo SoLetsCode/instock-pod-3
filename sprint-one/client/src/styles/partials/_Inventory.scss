@@ -61,4 +61,35 @@
     @include m-font-p;
     margin: 0 0 24px 0;
   }
+
+  &__kebab-remove-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  //expirmental code to implement remove button
+  &__remove {
+    width: 156px;
+    padding: 20px;
+    display: none;
+
+    &-active {
+      display: inline-block;
+    }
+  }
+
+  &__add-button {
+    background-color: $instock-blue;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 100px;
+    right: 50px;
+  }
 }
