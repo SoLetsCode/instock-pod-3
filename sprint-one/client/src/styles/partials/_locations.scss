@@ -4,6 +4,7 @@
 
 .locations {
   color: $black;
+  @include m-font-h1;
   @include m-font-p;
 
   &__header-wrapper {
@@ -13,8 +14,8 @@
     align-items: flex-start;
   }
 
-  //   &__data-wrapper {
-  //   }
+  &__data-wrapper {
+  }
 
   &__data-warehouse-info {
     display: flex;
@@ -39,8 +40,7 @@
   &__title {
     margin: 0;
     padding: 32px 0 16px 0;
-    border: 1px solid red;
-    color: $silver;
+    color: $black;
     @include m-font-h1;
   }
 
@@ -52,8 +52,8 @@
     display: none;
   }
 
-  //   &__data-body {
-  //   }
+  &__data-body {
+  }
 
   &__data-segment {
     border-bottom: 1px solid $silver;
@@ -109,7 +109,7 @@
       align-items: center;
     }
 
-    // &__data-body {
-    // }
+    &__data-body {
+    }
   }
 }
