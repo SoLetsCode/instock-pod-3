@@ -5,7 +5,7 @@ import Inventory from "./components/Inventory";
 import axios from "axios";
 import "./styles/App.css";
 
-import Locations from "./components/locations";
+import Locations from "./components/Locations";
 
 class App extends Component {
   constructor(props) {
