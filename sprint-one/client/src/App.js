@@ -1,15 +1,11 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import Header from "./components/Header";
+import Inventory from "./components/Inventory";
 import axios from "axios";
 import "./styles/App.css";
-import Header from "./components/Header";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect
-} from "react-router-dom";
 
-import Inventory from "./components/Inventory";
+import Locations from "./components/locations";
 
 class App extends Component {
   constructor(props) {
@@ -42,6 +38,7 @@ class App extends Component {
         <Router>
           <Header />
           <Inventory product={this.state.product} />
+          <Locations />
         </Router>
       </>
     );
