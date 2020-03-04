@@ -11,9 +11,15 @@ package-lock.json
 # production
 /build
 
+<<<<<<< HEAD
 # design
 /*.css
 /*.css.map
+=======
+# styles
+*.css
+*.css.map
+>>>>>>> master
 
 # misc
 .DS_Store
