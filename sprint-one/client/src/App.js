@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
+import Createnew from "./components/Createnew";
 import axios from "axios";
 import "./styles/App.css";
 
@@ -38,6 +39,7 @@ class App extends Component {
         <Router>
           <Header />
           <Inventory product={this.state.product} />
+          <Createnew />
           <Locations />
         </Router>
       </>
