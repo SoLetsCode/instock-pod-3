@@ -46,7 +46,8 @@
     "phone": "+1 514 778 9172",
     "email": "BBarker@priceisright.com",
     "product": {
-      "relish": 500
+      "relish": 500,
+      "mustard": 0
     }
   }
 ]
