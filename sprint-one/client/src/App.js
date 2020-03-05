@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
-import Locations from "./components/Locations";
+import Locations from "./components/Location";
 import Warehouses from "./components/Warehouses";
 import "./styles/App.css";
 
