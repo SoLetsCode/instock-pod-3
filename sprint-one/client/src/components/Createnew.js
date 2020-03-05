@@ -30,7 +30,16 @@ export default function Createnew() {
           </select>
         </div>
         <div className="createnew__availability">
-          <p className="createnew__textboxtitles">STATUS</p>
+          <p className="createnew__textboxtitles">QUANTITY</p>
+          <textarea className="createnew__textbox" placeholder="0"></textarea>
+          <div className="createnew__instock">
+            <p className="createnew__textboxtitles">STATUS</p>
+            <p>In Stock</p>
+            <label class="switch">
+              <input type="checkbox"></input>
+              <span class="slider round"></span>
+            </label>
+          </div>
         </div>
       </div>
     </form>

@@ -1,6 +1,7 @@
 [
   {
     "name": "Ketchup",
+    "id": "0",
     "description": "Red liquid with the consistency of molasses",
     "product": {
       "Warehouse1": 5,
@@ -9,6 +10,7 @@
   },
   {
     "name": "Mustard",
+    "id": "1",
     "description": "Yellow goop that is used on hotdogs",
     "product": {
       "Warehouse1": 50,
@@ -17,6 +19,7 @@
   },
   {
     "name": "Relish",
+    "id": "2",
     "description": "Green stuff that smells like celery",
     "product": {
       "Warehouse2": 0,

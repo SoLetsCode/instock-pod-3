@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
+import Createnew from "./components/Createnew";
 import axios from "axios";
 import "./styles/App.css";
 
@@ -44,10 +45,15 @@ class App extends Component {
       <>
         <Router>
           <Header />
+<<<<<<< HEAD
           <Inventory
             inventory={this.state.inventory}
             location={this.state.location}
           />
+=======
+          <Inventory product={this.state.product} />
+          <Createnew />
+>>>>>>> finished skeleton of createnew component
           <Locations />
         </Router>
       </>
