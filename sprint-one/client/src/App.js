@@ -46,14 +46,20 @@ class App extends Component {
         <Router>
           <Header />
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> fixed spelling mistake
           <Inventory
             inventory={this.state.inventory}
             location={this.state.location}
           />
+<<<<<<< HEAD
 =======
           <Inventory product={this.state.product} />
           <Createnew />
 >>>>>>> finished skeleton of createnew component
+=======
+>>>>>>> fixed spelling mistake
           <Locations />
         </Router>
       </>
