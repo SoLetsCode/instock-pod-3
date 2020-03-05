@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+
 import magIcon from "../assets/icons/SVG/icon-search.svg";
 import arrowRtIcon from "../assets/icons/SVG/icon-arrow-right.svg";
 import backArrowIcon from "../assets/icons/SVG/icon-back-arrow.svg";
 
-const Locations = ({ locations }) => {
-  console.log("Available to locations", locations);
+const Locations = props => {
+  console.log("Available to locations", props);
 
   return (
     <section className="locations">
@@ -30,7 +32,7 @@ const Locations = ({ locations }) => {
           <section className="locations__data-segment">
             <div className="locations__data-warehouse-info">
               <div className="locations__data-warehouse-location-info">
-                <h2>locations.warehouseName</h2>
+                <h2>locations.name </h2>
                 <div>
                   <img className="site-icon" src={arrowRtIcon} />
                 </div>

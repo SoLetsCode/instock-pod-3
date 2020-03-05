@@ -50,7 +50,7 @@ class App extends Component {
           />
           <Locations
             product={this.state.product}
-            locations={this.state.locations}
+            location={this.state.location}
           />
           <Warehouses />
         </Router>

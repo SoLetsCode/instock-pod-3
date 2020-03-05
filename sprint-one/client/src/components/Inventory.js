@@ -20,7 +20,7 @@ function Inventory({ inventory, location }) {
                 <div className="inventory__name-description-container">
                   <p className="inventory__name">{inventory[index].name}</p>
                   <p className="inventory__description">
-                    {inventory[index].product.description}
+                    {inventory[index].description}
                   </p>
                 </div>
               </div>
