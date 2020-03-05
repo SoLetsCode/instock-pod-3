@@ -1,0 +1,14 @@
+[
+  {
+    "name": "ketchup",
+    "description": "red liquid with the consistency of molasses"
+  },
+  {
+    "name": "mustard",
+    "description": "yellow goop that is used on hotdogs"
+  },
+  {
+    "name": "relish",
+    "desription": "green stuff that smells like celery"
+  }
+]

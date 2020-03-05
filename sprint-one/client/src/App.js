@@ -1,11 +1,16 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import axios from "axios";
 import "./styles/App.css";
 
-import Locations from "./components/locations";
+import Locations from "./components/Locations";
 
 class App extends Component {
   constructor(props) {
