@@ -13,10 +13,6 @@
   src: url("../assets/font/AvenirNextLTPro-Bold.otf");
 }
 
-.main {
-  margin: 20px;
-}
-
 .locations {
   color: #323232;
   font-size: 24px;
@@ -405,6 +401,84 @@ a {
   position: fixed;
   bottom: 100px;
   right: 50px;
+}
+
+.warehouses {
+  padding: 32px 16px 0 16px;
+  color: #323232;
+  font-size: 24px;
+  line-height: 32px;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.warehouses__header-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.warehouses__title {
+  padding: 0 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.warehouses__nav-arrow {
+  padding: 0 8px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.warehouses__title {
+  font-family: avenir-bold;
+  margin: 0;
+  margin: 0 0 16px 0;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+@media only screen and (min-width: 767px) {
+  .warehouses {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .warehouses__header-wrapper {
+    border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+  }
+  .warehouses__title {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .warehouses__nav-arrow {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}
+
+.products {
+  border: 1px solid navy;
+}
+
+.products__product-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  margin: 16px 0 0 0;
+  background: #fafafa;
+  border-bottom: 1px solid #e1e1e1;
 }
 
 /* reset the page */

@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import axios from "axios";
+
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
-import axios from "axios";
-import "./styles/App.css";
-
 import Locations from "./components/Locations";
+import Warehouses from "./components/Warehouses";
+import "./styles/App.css";
 
 class App extends Component {
   constructor(props) {
@@ -28,7 +29,16 @@ class App extends Component {
           location: "Toronto, CAN",
           quantity: 9000
         }
-      ]
+      ],
+      locations: {
+        warehouseID: 1,
+        warehouseName: "Warehouse Number 1",
+        address: "469 King St W, Toronto, ON",
+        contact: "Maria Weinberg",
+        title: "Warehouse Manager",
+        phone: "+1 416 678 2345",
+        email: "weinberg@instock.com"
+      }
     };
   }
 
@@ -38,7 +48,11 @@ class App extends Component {
         <Router>
           <Header />
           <Inventory product={this.state.product} />
-          <Locations />
+          <Locations
+            product={this.state.product}
+            locations={this.state.locations}
+          />
+          <Warehouses />
         </Router>
       </>
     );

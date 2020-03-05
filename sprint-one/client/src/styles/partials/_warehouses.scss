@@ -1,0 +1,61 @@
+.warehouses {
+  padding: 32px 16px 0 16px;
+
+  color: $black;
+
+  &__header-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__title {
+    padding: 0 8px;
+    @include m-font-h1;
+  }
+  &__nav-arrow {
+    padding: 0 8px;
+    @include m-font-h1;
+  }
+
+  &__title {
+    font-family: avenir-bold;
+    margin: 0;
+    margin: 0 0 16px 0;
+
+    @include m-font-h1;
+  }
+
+  @include m-font-h1;
+  @include m-font-p;
+
+  @include tablet {
+    &__header-wrapper {
+      border-bottom: 1px solid rgba(50, 50, 50, 0.2);
+    }
+    &__title {
+      @include dt-font-h1;
+    }
+    &__nav-arrow {
+      @include dt-font-h1;
+    }
+
+    @include dt-font-p;
+  }
+
+  @include desktop {
+  }
+}
+
+.products {
+  border: 1px solid navy;
+
+  &__product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 16px 0 0 0;
+    background: $alabaster;
+    border-bottom: 1px solid $mercury;
+  }
+}
