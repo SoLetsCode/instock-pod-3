@@ -1,0 +1,44 @@
+{
+  "Warehouse1": {
+    "name": "Warehouse1",
+    "category": "easy, take out, sweat shop",
+    "address": "123 Main Street",
+    "suite": "Suite 201",
+    "city": "Timbuktu",
+    "province": "ON",
+    "postal": "888 888",
+    "country": "CA",
+    "managerName": "Sara Wagner",
+    "managerTitle": "Warehouse Manager",
+    "phone": "+1 416 778 9172",
+    "email": "sarawagner@gmail.com"
+  },
+  "Warehouse2": {
+    "name": "Warehouse2",
+    "category": "deluxe meals, on the go, expensive, romantic",
+    "address": "142 Main Street",
+    "suite": "Suite 205",
+    "city": "Toronto",
+    "province": "ON",
+    "postal": "888 888",
+    "country": "CA",
+    "managerName": "Charles Whittle",
+    "managerTitle": "Warehouse Owner",
+    "phone": "+1 416 778 9172",
+    "email": "CWhittle@gmail.com"
+  },
+  "Warehouse3": {
+    "name": "Warehouse3",
+    "category": "junk food, fast food, condiments",
+    "address": "142 Jackson Street",
+    "suite": "Suite 300",
+    "city": "Charleston",
+    "province": "ON",
+    "postal": "888 888",
+    "country": "CA",
+    "managerName": "Bob Barker",
+    "managerTitle": "Warehouse Manager",
+    "phone": "+1 514 778 9172",
+    "email": "BBarker@priceisright.com"
+  }
+}

@@ -5,12 +5,12 @@ const app = express();
 app.use(express.json()); // this is so we can access req.body
 
 //routes
-const warehouse = require("./routes/api/warehouse.js");
-const product = require("./routes/api/product.js");
+const location = require("./routes/api/location.js");
+const inventory = require("./routes/api/inventory.js");
 
 //URLs to access each API
-app.use("/api/warehouse", warehouse);
-app.use("/api/product", product);
+app.use("/api/location", location);
+app.use("/api/inventory", inventory);
 
 app.listen(5000, () => {
   console.log("listening on port 5000");
