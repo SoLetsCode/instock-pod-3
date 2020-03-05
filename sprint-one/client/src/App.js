@@ -1,5 +1,10 @@
 import React, { Component } from "react";
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Redirect,
+  Switch
+} from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Createnew from "./components/Createnew";
@@ -12,25 +17,27 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      product: [
-        {
-          id: "aegijweog",
-          name: "Product Name Here",
-          description: "brief description",
-          lastOrder: "05/24/2018",
-          location: "Toronto, CAN",
-          quantity: 12000
-        },
-        {
-          id: "12345",
-          name: "Pokeball",
-          description: "red and white captures pokemon",
-          lastOrder: "05/24/2019",
-          location: "Toronto, CAN",
-          quantity: 9000
-        }
-      ]
+      location: {},
+      inventory: {}
     };
+  }
+
+  componentDidMount() {
+    //making two get requests for location and inventory
+    const getLocation = () => axios.get("/api/location");
+    const getInventory = () => axios.get("/api/inventory");
+
+    axios
+      .all([getLocation(), getInventory()])
+      .then(
+        axios.spread((location, inventory) => {
+          this.setState({
+            location: location.data,
+            inventory: inventory.data
+          });
+        })
+      )
+      .catch(err => console.log(err));
   }
 
   render() {
@@ -38,8 +45,15 @@ class App extends Component {
       <>
         <Router>
           <Header />
+<<<<<<< HEAD
           <Inventory product={this.state.product} />
           <Createnew />
+=======
+          <Inventory
+            inventory={this.state.inventory}
+            location={this.state.location}
+          />
+>>>>>>> 15362d122024f47562bba74e412dad5ffaa6b943
           <Locations />
         </Router>
       </>

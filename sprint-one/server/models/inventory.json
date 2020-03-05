@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Ketchup",
+    "description": "Red liquid with the consistency of molasses",
+    "product": {
+      "Warehouse1": 5,
+      "Warehouse2": 7
+    }
+  },
+  {
+    "name": "Mustard",
+    "description": "Yellow goop that is used on hotdogs",
+    "product": {
+      "Warehouse1": 50,
+      "Warehouse3": 100
+    }
+  },
+  {
+    "name": "Relish",
+    "description": "Green stuff that smells like celery",
+    "product": {
+      "Warehouse2": 0,
+      "Warehouse3": 75
+    }
+  }
+]
