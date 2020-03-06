@@ -1,9 +1,9 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
+import InventoryCard from "./InventoryCard";
 
 //images
 import magImg from "../assets/icons/SVG/icon-search.svg";
-import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
 import addImg from "../assets/icons/SVG/icon-add.svg";
 
 function Inventory({ inventory, location }) {
@@ -13,51 +13,13 @@ function Inventory({ inventory, location }) {
     for (let index in inventory) {
       for (let warehouseName in inventory[index].product) {
         tempList.push(
-          <div className="inventory__product-card" key={uuidv4()}>
-            <div className="inventory__left-container">
-              <div className="inventory__container">
-                <p className="inventory__label">ITEM</p>
-                <div className="inventory__name-description-container">
-                  <p className="inventory__name">{inventory[index].name}</p>
-                  <p className="inventory__description">
-                    {inventory[index].product.description}
-                  </p>
-                </div>
-              </div>
-
-              <div className="inventory__container">
-                <p className="inventory__label">LAST ORDERED</p>
-                <p className="inventory__description">12/12/2018</p>
-              </div>
-
-              <div className="inventory__container">
-                <p className="inventory__label">LOCATION</p>
-                <p className="inventory__description">{`${location[warehouseName].city}, ${location[warehouseName].province}`}</p>
-              </div>
-
-              <div className="inventory__container">
-                <p className="inventory__label">QUANTITY</p>
-                <p className="inventory__description">
-                  {inventory[index].product[warehouseName]}
-                </p>
-              </div>
-
-              <div className="inventory__container">
-                <p className="inventory__label">STATUS</p>
-                <p className="inventory__description">
-                  {inventory[index].product[warehouseName] > 0
-                    ? "In Stock"
-                    : "Out of Stock"}
-                </p>
-              </div>
-            </div>
-            <div className="inventory__kebab-remove-container">
-              <img src={kebabImg} alt="kebab" className="inventory__kebab" />
-              <div className="inventory__remove" name={inventory[index].name}>
-                Remove
-              </div>
-            </div>
-          </div>
+          <InventoryCard
+            productName={inventory[index].name}
+            productDescription={inventory[index].description}
+            city={location[warehouseName].city}
+            province={location[warehouseName].province}
+            quantity={inventory[index].product[warehouseName]}
+          />
         );
       }
     }

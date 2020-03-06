@@ -107,14 +107,9 @@
   &__remove {
     width: 156px;
     padding: 20px;
-    display: none;
     position: absolute;
     top: 25px;
     background-color: $mercury;
-
-    &-active {
-      display: inline-block;
-    }
   }
 
   &__add-button {
