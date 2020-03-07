@@ -67,8 +67,22 @@ router.post("/:product", (req, res) => {
   res.send("Added product to inventory: " + JSON.stringify(product));
 });
 
-router.put("/:product", (req, res) => {
-  res.send("you will delete a product here you need warehouse and product");
+router.delete("/:product", (req, res) => {
+  const productId = req.params.product; //id of the product to delete
+  let index = -1;
+  for (let i = 0; i < productList.length; i++) {
+    if (productList[i].id === productId) {
+      index = i;
+    }
+  }
+  if (index === -1) {
+    return res.send(
+      `Product ${productId} could not be deleted because it doesn't exist`
+    );
+  }
+  productList.splice(index, index + 1);
+  writeJSONFile(productListFile, productList);
+  res.send(`deleted product ${productId}`);
 });
 
 function findFromInventoryByUuid(uuid) {
