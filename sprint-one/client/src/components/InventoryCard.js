@@ -14,6 +14,12 @@ export default class InventoryCard extends Component {
     };
   }
 
+  removeClick = () => {
+    //add in the axios call to remove item here. Sending the productName and warehouseName in the req.body.
+    console.log("removing ", this.props.productName);
+    console.log("from, ", this.props.warehouseName);
+  };
+
   kebabClick = event => {
     this.state.hide
       ? this.setState({ hide: false })
@@ -22,7 +28,7 @@ export default class InventoryCard extends Component {
 
   render() {
     return (
-      <div className="inventory__product-card" key={uuidv4()}>
+      <div className="inventory__product-card">
         <div className="inventory__left-container">
           <div className="inventory__container">
             <p className="inventory__label">ITEM</p>
@@ -65,7 +71,7 @@ export default class InventoryCard extends Component {
           />
           {/* renders remove button based on togglestate */}
           {this.state.hide ? (
-            <div className="inventory__remove" name={this.props.productName}>
+            <div className="inventory__remove" onClick={this.removeClick}>
               {" "}
               Remove{" "}
             </div>
