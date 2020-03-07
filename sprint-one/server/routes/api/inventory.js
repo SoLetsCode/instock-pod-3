@@ -21,7 +21,28 @@ router.get("/", (req, res) => {
 });
 
 router.post("/:product", (req, res) => {
-  res.send("you will create a product here");
+  const productId = req.params.product;
+  const title = req.body.title;
+  const description = req.body.description;
+  const quantity = req.body.quantity;
+  const warehouseId = req.body.warehouse;
+  if (
+    productId === undefined ||
+    title === undefined ||
+    description === undefined ||
+    quantity === undefined ||
+    warehouseId === undefined
+  ) {
+    res.status(400).send("Missing information from required fields");
+  }
+  res.send(
+    "you will create a product here" +
+      productId +
+      title +
+      description +
+      quantity +
+      warehouseId
+  );
 });
 
 router.put("/:product", (req, res) => {
