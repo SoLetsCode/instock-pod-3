@@ -21,11 +21,13 @@ router.get("/", (req, res) => {
 });
 
 router.post("/:product", (req, res) => {
+  // getting new product information out of request
   const productId = req.params.product;
   const title = req.body.title;
   const description = req.body.description;
   const quantity = req.body.quantity;
   const warehouseId = req.body.warehouse;
+  // created error if entry isn't complete
   if (
     productId === undefined ||
     title === undefined ||
@@ -35,14 +37,21 @@ router.post("/:product", (req, res) => {
   ) {
     res.status(400).send("Missing information from required fields");
   }
-  res.send(
-    "you will create a product here" +
-      productId +
-      title +
-      description +
-      quantity +
-      warehouseId
-  );
+  // build object to put into inventory.json
+  const product = {
+    description,
+    name: title,
+    id: productId,
+    product: {
+      Warehouse1: warehouseId === 1 ? quantity : 0,
+      Warehouse2: warehouseId === 2 ? quantity : 0,
+      Warehouse3: warehouseId === 3 ? quantity : 0
+    }
+  };
+  //pushed object into existing array
+  productList.push(product);
+  writeJSONFile(productListFile, productList);
+  res.send("Added product to inventory: " + JSON.stringify(product));
 });
 
 router.put("/:product", (req, res) => {
