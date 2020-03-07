@@ -426,14 +426,9 @@ a {
 .inventory__remove {
   width: 156px;
   padding: 20px;
-  display: none;
   position: absolute;
   top: 25px;
   background-color: #e1e1e1;
-}
-
-.inventory__remove-active {
-  display: inline-block;
 }
 
 .inventory__add-button {
