@@ -48,7 +48,9 @@ export default function Createnew() {
           ></textarea>
         </div>
         <div className="createnew__save">
-          <button>SAVE</button>
+          <button>
+            <span>SAVE</span>
+          </button>
         </div>
       </div>
     </form>

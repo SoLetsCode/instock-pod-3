@@ -20,8 +20,6 @@ class App extends Component {
       location: {},
       inventory: {}
     };
-
-    //bind
   }
 
   componentDidMount() {
@@ -42,37 +40,14 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  //hand.e
-
   render() {
     return (
       <>
         <Router>
           <Header />
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> fixed spelling mistake
-=======
-          <Locations />
->>>>>>> added toggle button, working!
-          <Inventory
-            inventory={this.state.inventory}
-            location={this.state.location}
-          />
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
           <Inventory product={this.state.product} />
           <Createnew />
->>>>>>> finished skeleton of createnew component
-=======
->>>>>>> fixed spelling mistake
           <Locations />
-=======
-          <Createnew />
->>>>>>> added toggle button, working!
         </Router>
       </>
     );

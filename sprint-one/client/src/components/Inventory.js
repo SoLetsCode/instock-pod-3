@@ -6,6 +6,7 @@ import CreateNew from "./Createnew";
 //images
 import magImg from "../assets/icons/SVG/icon-search.svg";
 import addImg from "../assets/icons/SVG/icon-add.svg";
+import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
 
 // function Inventory({ inventory, location }) {
 //   const addClick = event => {
@@ -59,18 +60,6 @@ export default class Inventory extends Component {
     for (let index in inventory) {
       for (let warehouseName in inventory[index].product) {
         tempList.push(
-<<<<<<< HEAD
-          //creating each row of the table
-          <InventoryCard
-            productName={inventory[index].name}
-            productDescription={inventory[index].description}
-            city={location[warehouseName].city}
-            province={location[warehouseName].province}
-            quantity={inventory[index].product[warehouseName]}
-            warehouseName={warehouseName}
-            key={uuidv4()}
-          />
-=======
           <div className="inventory__product-card" key={uuidv4()}>
             <div className="inventory__left-container">
               <div className="inventory__container">
@@ -116,7 +105,6 @@ export default class Inventory extends Component {
               </div>
             </div>
           </div>
->>>>>>> fixed spelling mistake
         );
       }
     }
