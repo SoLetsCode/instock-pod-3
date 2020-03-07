@@ -1,5 +1,7 @@
 import React from "react";
 
+import Toggle from "./Toggle";
+
 export default function Createnew() {
   return (
     <form>
@@ -34,11 +36,7 @@ export default function Createnew() {
           <textarea className="createnew__textbox" placeholder="0"></textarea>
           <div className="createnew__instock">
             <p className="createnew__textboxtitles">STATUS</p>
-            <p>In Stock</p>
-            <label class="switch">
-              <input type="checkbox"></input>
-              <span class="slider round"></span>
-            </label>
+            <Toggle />
           </div>
         </div>
       </div>
