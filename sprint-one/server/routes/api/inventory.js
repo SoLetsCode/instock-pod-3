@@ -18,7 +18,7 @@ function writeJSONFile(filename, content) {
 
 router.get("/:product", (req, res) => {
   const productId = req.params.product;
-  const product = productList.find(p => p.id === productId);
+  const product = findFromInventoryByUuid(productId);
   if (product === undefined) {
     res.send({});
   } else {
@@ -47,6 +47,9 @@ router.post("/:product", (req, res) => {
   ) {
     res.status(400).send("Missing information from required fields");
   }
+  if (findFromInventoryByUuid(productId) !== undefined) {
+    res.status(400).send(`Product ${productId} already exists`);
+  }
   // build object to put into inventory.json
   const product = {
     description,
@@ -67,5 +70,9 @@ router.post("/:product", (req, res) => {
 router.put("/:product", (req, res) => {
   res.send("you will delete a product here you need warehouse and product");
 });
+
+function findFromInventoryByUuid(uuid) {
+  return productList.find(p => p.id === uuid);
+}
 
 module.exports = router;
