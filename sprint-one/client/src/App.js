@@ -20,6 +20,8 @@ class App extends Component {
       location: {},
       inventory: {}
     };
+
+    //bind
   }
 
   componentDidMount() {
@@ -40,16 +42,19 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  //hand.e
+
   render() {
     return (
       <>
         <Router>
           <Header />
+          <Locations />
           <Inventory
             inventory={this.state.inventory}
             location={this.state.location}
           />
-          <Locations />
+          <Createnew />
         </Router>
       </>
     );
