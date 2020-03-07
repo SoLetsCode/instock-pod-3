@@ -12,11 +12,12 @@ export default function Createnew() {
             className="createnew__textbox"
             placeholder="Item Name"
           ></textarea>
-          <p className="createnew__textboxtitles">LAST ORDERED</p>
-          <textarea
-            className="createnew__textbox"
-            placeholder="yyyy-mm-dd"
-          ></textarea>
+          <p className="createnew__textboxtitles">WAREHOUSE</p>
+          <select>
+            <option>Warehouse 1 </option>
+            <option>Warehouse 2 </option>
+            <option>Warehouse 3 </option>
+          </select>
         </div>
         <div className="createnew__location">
           <p className="createnew__textboxtitles">CITY</p>
@@ -38,6 +39,16 @@ export default function Createnew() {
             <p className="createnew__textboxtitles">STATUS</p>
             <Toggle />
           </div>
+        </div>
+        <div className="createnew__description">
+          <p className="createnew__textboxtitles">ITEM DESCRIPTION</p>
+          <textarea
+            className="createnew__textbox"
+            placeholder="(Optional)"
+          ></textarea>
+        </div>
+        <div className="createnew__save">
+          <button>SAVE</button>
         </div>
       </div>
     </form>
