@@ -16,6 +16,16 @@ function writeJSONFile(filename, content) {
   console.log(`changes saved to file ${filename}....`);
 }
 
+router.get("/:product", (req, res) => {
+  const productId = req.params.product;
+  const product = productList.find(p => p.id === productId);
+  if (product === undefined) {
+    res.send({});
+  } else {
+    res.send(product);
+  }
+});
+
 router.get("/", (req, res) => {
   res.send(productList);
 });
