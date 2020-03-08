@@ -1,8 +1,16 @@
 .locations {
+  // Component Parent
+  padding: 32px 16px 0 16px;
+
+  max-width: 100%;
+
   color: $black;
   @include m-font-h1;
   @include m-font-p;
 
+  //border: 10px solid seagreen;
+
+  // Component Header
   &__header-wrapper {
     display: flex;
     flex-direction: column;
@@ -10,45 +18,121 @@
     align-items: flex-start;
   }
 
+  &__title {
+    margin: 0 0 16px 0;
+    padding: 32px 0 16px 0;
+    font-size: 22px;
+
+    font-family: avenir-bold;
+  }
+
+  &__search-form {
+    padding: 10px;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+    display: flex;
+    width: 250px;
+    margin: 0 0 32px 0;
+    background-color: $alabaster;
+  }
+
+  &__search-icon {
+    margin-right: 10px;
+  }
+
+  &__search-input {
+    @include m-font-p;
+    background-color: $alabaster;
+    font-family: avenir;
+    border: none;
+
+    &:focus {
+      outline: transparent;
+    }
+  }
+
+  // Data Table Parent
   &__data-wrapper {
+    // Derek product card
+    margin: 16px 0 0 0;
+
+    border-bottom: 1px solid $mercury;
+  }
+
+  // Data Table Header
+  &__data-header {
+    display: none;
+  }
+
+  // Data Table Body
+  &__data-body {
+  }
+
+  &__data-warehouse-segment {
+    background-color: orange;
   }
 
   &__data-warehouse-info {
+    /*    display: flex;
+    flex-direction: column; */
+
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  &__data-warehouse-location-info {
+    //font-size: 14px;
+    //line-height: 16px;
+    width: 100;
+
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__data-warehouse-location-info-title {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  &__site-icon-wrapper {
+    width: 100%;
+  }
+
+  &__data-warehouse-address-info {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
   }
 
   &__data-contact-person {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+
     display: flex;
     flex-direction: column;
   }
 
   &__data-contact-info {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+
     display: flex;
     flex-direction: column;
   }
 
-  &__locations__data-categories {
+  &__data-categories {
+    padding: 10px 0;
+    font-size: 14px;
+    line-height: 22px;
+
     display: flex;
     flex-direction: column;
-  }
-
-  &__title {
-    margin: 0;
-    padding: 32px 0 16px 0;
-    color: $black;
-    @include m-font-h1;
-  }
-
-  &__search {
-    margin: 32px 0 16px 0;
-  }
-
-  &__data-header {
-    display: none;
-  }
-
-  &__data-body {
   }
 
   &__data-segment {
@@ -60,21 +144,21 @@
   }
 
   @include tablet {
-    border: 1px solid seagreen;
-    @include dt-font-p;
+    padding: 32px 24px 0 24px;
 
     &__header-wrapper {
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
     }
-
+    // Data Table Parent
+    &__data-wrapper {
+    }
     &__data-header {
       display: none;
     }
 
     &__data-body {
-      border: 10px rebeccapurple;
     }
 
     &__data-segment {
@@ -91,18 +175,20 @@
   }
 
   @include desktop {
-    border: 1px solid navy;
+    border: 10px solid navy;
     &__header-wrapper {
-      flex-direction: row;
+      //flex-direction: row;
 
-      justify-content: space-between;
-      align-items: center;
+      //justify-content: space-between;
+      //align-items: center;
     }
 
     &__data-header {
-      display: flex;
+      /*     display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: center; */
+      display: inline-block;
+      border: 10px solid red;
     }
 
     &__data-body {

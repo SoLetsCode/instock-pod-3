@@ -12,7 +12,7 @@ export default function Header() {
         <Link to="/inventory">
           <div className="header__inventory">Inventory</div>
         </Link>
-        <Link to="/">
+        <Link to="/locations">
           <div className="header__locations">Locations</div>
         </Link>
       </div>

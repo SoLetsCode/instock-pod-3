@@ -49,10 +49,13 @@ class App extends Component {
             location={this.state.location}
           />
           <Locations
-            product={this.state.product}
+            inventory={this.state.inventory}
             location={this.state.location}
           />
-          <Warehouses />
+          <Warehouses
+            inventory={this.state.inventory}
+            location={this.state.location}
+          />
         </Router>
       </>
     );
