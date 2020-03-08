@@ -10,6 +10,8 @@ import Inventory from "./components/Inventory";
 import axios from "axios";
 import Locations from "./components/Location";
 import Warehouses from "./components/Warehouses";
+import Products from "./components/Products";
+
 import "./styles/App.css";
 
 class App extends Component {
@@ -44,15 +46,22 @@ class App extends Component {
       <>
         <Router>
           <Header />
+          <Products
+            path="/products"
+            inventory={this.state.inventory}
+            location={this.state.location}
+          />
           <Inventory
             inventory={this.state.inventory}
             location={this.state.location}
           />
           <Locations
+            path="/location"
             inventory={this.state.inventory}
             location={this.state.location}
           />
           <Warehouses
+            path="/warehouse"
             inventory={this.state.inventory}
             location={this.state.location}
           />
