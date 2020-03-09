@@ -7,7 +7,7 @@ import arrowRtIcon from "../assets/icons/SVG/icon-arrow-right.svg";
 
 // FUNCTIONS
 // Component Header
-const getComponentHeader = () => {
+const ComponentHeader = () => {
   return (
     <header className="locations__header-wrapper">
       <h2 className="locations__title">Locations</h2>
@@ -28,7 +28,7 @@ const getComponentHeader = () => {
   );
 };
 // Data Table Header
-const getTableHeader = () => {
+const TableHeader = () => {
   return (
     <section className="locations__data-header">
       <div>WAREHOUSE</div>
@@ -40,7 +40,7 @@ const getTableHeader = () => {
 };
 
 // Locations
-const getTableBodyData = location => {
+const TableBody = location => {
   return (
     <section className="locations__data-body">
       <div className="locations__data-warehouse-segment locations__data-warehouse-info">
@@ -75,18 +75,20 @@ const getTableBodyData = location => {
     </section>
   );
 };
-const getTableBody = getTableBodyData();
+//const getTableBody = getTableBodyData();
 
 // LOCATIONS COMPONENT
-const Locations = ({ location }) => {
+const Locations = props => {
+  const { location } = props;
+
   // THE RETURN
   return (
     <section className="locations">
-      {console.log("Locations component has access to: ", location)}
+      {console.log("Locations component has access to: ", props.location)}
       <section className="locations__data-wrapper">
-        {getComponentHeader()}
-        {getTableHeader()}
-        {getTableBody}
+        <ComponentHeader />
+        <TableHeader />
+        <TableBody location={location} />
       </section>
     </section>
   );
