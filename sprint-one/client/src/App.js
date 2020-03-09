@@ -22,6 +22,8 @@ class App extends Component {
       product: {},
       warehouse: {}
     };
+
+    //bind
   }
 
   componentDidMount() {
