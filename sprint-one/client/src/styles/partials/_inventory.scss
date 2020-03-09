@@ -97,10 +97,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-
-    @include tablet {
-      margin: 0 0 0 40px;
-    }
   }
 
   //expirmental code to implement remove button
