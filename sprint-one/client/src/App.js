@@ -67,6 +67,9 @@ class App extends Component {
         <Router>
           <Header />
           <Switch>
+            <Route path="/" exact>
+              <Redirect to="/inventory" />
+            </Route>
             {/* below is where you will put the specific product component. You also need to use render method */}
             <Route path="/inventory/:product" />
             <Route path="/inventory">
