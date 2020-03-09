@@ -13,8 +13,8 @@ class Toggle extends Component {
 
   render() {
     return (
-      <div className="Toggletog">
-        <h2>In Stock</h2>
+      <div className="toggletog">
+        <p className="toggletog__title">In Stock</p>
         <label>
           <Rswitch
             onChange={this.handleChange}
@@ -23,7 +23,7 @@ class Toggle extends Component {
           />
         </label>
         <p>
-          The switch is <span>{this.state.checked ? "on" : "off"}</span>.
+          <span>{this.state.checked ? "on" : "off"}</span>.
         </p>
       </div>
     );

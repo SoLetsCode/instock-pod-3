@@ -6,17 +6,19 @@ export default function Createnew() {
   return (
     <form>
       <div className="createnew__all">
+        <div className="createnew__title">Create New</div>
         <div className="createnew__product">
           <p className="createnew__textboxtitles">PRODUCT</p>
           <textarea
             className="createnew__textbox"
             placeholder="Item Name"
           ></textarea>
-          <p className="createnew__textboxtitles">LAST ORDERED</p>
-          <textarea
-            className="createnew__textbox"
-            placeholder="yyyy-mm-dd"
-          ></textarea>
+          <p className="createnew__textboxtitles">WAREHOUSE</p>
+          <select className="createnew__dropdown">
+            <option>Warehouse 1 </option>
+            <option>Warehouse 2 </option>
+            <option>Warehouse 3 </option>
+          </select>
         </div>
         <div className="createnew__location">
           <p className="createnew__textboxtitles">CITY</p>
@@ -25,7 +27,7 @@ export default function Createnew() {
             placeholder="City"
           ></textarea>
           <p className="createnew__textboxtitles">COUNTRY</p>
-          <select>
+          <select className="createnew__dropdown">
             <option>Canada </option>
             <option>United States </option>
             <option>Portugal </option>
@@ -38,6 +40,21 @@ export default function Createnew() {
             <p className="createnew__textboxtitles">STATUS</p>
             <Toggle />
           </div>
+        </div>
+        <div className="createnew__description">
+          <p className="createnew__textboxtitles">ITEM DESCRIPTION</p>
+          <textarea
+            className="createnew__textboxdescription"
+            placeholder="(Optional)"
+          ></textarea>
+        </div>
+        <div className="createnew__buttons">
+          <button className="createnew__save">
+            <span className>SAVE</span>
+          </button>
+        </div>
+        <div className="createnew__cancel">
+          <span> CANCEL</span>
         </div>
       </div>
     </form>
