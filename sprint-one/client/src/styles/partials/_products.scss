@@ -1,0 +1,58 @@
+.products {
+  padding: 32px 16px 0 16px;
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__header-back-btn {
+    width: 50px;
+  }
+
+  &__header-back-icon {
+  }
+
+  &__header-title {
+    margin: 0 0 16px 0;
+    padding: 32px 0 16px 0;
+    font-size: 22px;
+
+    width: 80%;
+  }
+  &__header-instock-btn {
+    background-color: #69b02d;
+    color: #fff;
+    padding: 10px;
+    width: 100px;
+    border-radius: 5px;
+  }
+
+  &__header-title {
+  }
+
+  @include tablet {
+    &__header {
+      flex-wrap: no-wrap;
+    }
+
+    &__header-title {
+      width: 30%;
+    }
+  }
+
+  @include tablet {
+    &__header-title {
+      margin: 0 0 16px 0;
+      padding: 32px 0 16px 0;
+      font-size: 22px;
+
+      width: 100px;
+    }
+  }
+
+  @include desktop {
+  }
+}
