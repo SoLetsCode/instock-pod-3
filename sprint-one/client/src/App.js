@@ -89,12 +89,20 @@ class App extends Component {
               />
             </Route>
             {/* below is where you will put the specific warehouse component. You also need to use render method*/}
-            <Route path="/location/:warehouse">
-              <Warehouses
-                inventory={this.state.inventory}
-                location={this.state.location}
-              />
-            </Route>
+            {/* <Route
+              path='/dashboard'
+              render={(props) => <Dashboard {...props} isAuthed={true} />}
+            /> */}
+            <Route
+              path="/location/:warehouse"
+              render={props => (
+                <Warehouses
+                  {...props}
+                  inventory={this.state.inventory}
+                  location={this.state.location}
+                />
+              )}
+            />
             <Route path="/location">
               <Locations
                 inventory={this.state.inventory}

@@ -2,14 +2,20 @@ import React from "react";
 import backArrowIcon from "../assets/icons/SVG/icon-back-arrow.svg";
 import kebabIcon from "../assets/icons/SVG/icon-kebab-default.svg";
 
-const Warehouses = ({ locations }) => {
+const Warehouses = ({ location, inventory, match }) => {
+  const capitalFirst = string => {
+    let word = string[0].toUpperCase() + string.slice(1);
+    return word;
+  };
   return (
     <section className="warehouses">
       <header className="warehouses__header-wrapper">
         <div className="warehouses__nav-arrow">
           <img className="site-icon" src={backArrowIcon} />
         </div>
-        <h2 className="warehouses__title">Warehouse Name</h2>
+        <h2 className="warehouses__title">
+          {capitalFirst(match.params.warehouse)}
+        </h2>
       </header>
 
       <section className="warehouses__data-wrapper">
