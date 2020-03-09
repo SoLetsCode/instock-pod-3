@@ -26,18 +26,39 @@
     @include m-font-h1;
   }
 
+  &__data-address,
+  &__data-city,
+  &__data-contact-person,
+  &__data-contact-contact-info {
+    padding: 20px 0;
+  }
+
   @include m-font-h1;
   @include m-font-p;
 
   @include tablet {
     &__header-wrapper {
+      padding: 0 0 50px 0;
       border-bottom: 1px solid rgba(50, 50, 50, 0.2);
     }
+
     &__title {
       @include dt-font-h1;
     }
+
     &__nav-arrow {
       @include dt-font-h1;
+    }
+
+    &__details {
+      padding: 20px 0;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__data-warehouse-address-info,
+    &__data-contact-info {
+      flex: 1 1;
     }
 
     @include dt-font-p;
@@ -47,15 +68,38 @@
   }
 }
 
-.products {
-  border: 1px solid navy;
+.products-summary {
+  background: $alabaster;
+
+  &__card-header {
+    display: none;
+  }
 
   &__product-card {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin: 16px 0 0 0;
-    background: $alabaster;
+
     border-bottom: 1px solid $mercury;
+  }
+
+  @include tablet {
+    &__card-header {
+      padding: 20px 0;
+      color: $silver;
+    }
+    &__card-header,
+    &__product-card,
+    &__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &__label {
+      display: none;
+    }
   }
 }
