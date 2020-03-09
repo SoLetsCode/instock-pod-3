@@ -57,13 +57,18 @@ class App extends Component {
       <>
         <Router>
           <Header />
-          <Inventory
-            inventory={this.state.inventory}
-            location={this.state.location}
-            getInventoryList={this.getInventoryList}
-          />
-          <Createnew />
-          <Locations />
+          <Switch>
+            <Route path="/inventory">
+              <Inventory
+                inventory={this.state.inventory}
+                location={this.state.location}
+                getInventoryList={this.getInventoryList}
+              />
+            </Route>
+            <Route path="/location">
+              <Locations />
+            </Route>
+          </Switch>
         </Router>
       </>
     );
