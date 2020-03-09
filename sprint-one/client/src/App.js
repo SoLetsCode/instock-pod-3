@@ -9,9 +9,9 @@ import Header from "./components/Header";
 import Inventory from "./components/Inventory";
 import Createnew from "./components/Createnew";
 import axios from "axios";
+import Locations from "./components/Location";
+import Warehouses from "./components/Warehouses";
 import "./styles/App.css";
-
-import Locations from "./components/Locations";
 
 class App extends Component {
   constructor(props) {
@@ -83,8 +83,15 @@ class App extends Component {
             </Route>
             {/* below is where you will put the specific warehouse component. You also need to use render method*/}
             <Route path="/location/:warehouse" />
+            <Warehouses
+              inventory={this.state.inventory}
+              location={this.state.location}
+            />
             <Route path="/location">
-              <Locations />
+              <Locations
+                inventory={this.state.inventory}
+                location={this.state.location}
+              />
             </Route>
           </Switch>
         </Router>
