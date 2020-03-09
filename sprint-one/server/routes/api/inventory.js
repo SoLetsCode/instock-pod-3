@@ -46,29 +46,30 @@ router.post("/:product", (req, res) => {
     warehouseId === undefined
   ) {
     res.status(400).send("Missing information from required fields");
-  }
-  if (findFromInventoryByUuid(productId) !== undefined) {
+    //check if product exists. Don't add if it does
+  } else if (findFromInventoryByUuid(productId) !== undefined) {
     res.status(400).send(`Product ${productId} already exists`);
+  } else {
+    const product = {
+      description,
+      name: title,
+      id: productId,
+      product: {
+        Warehouse1: warehouseId === 1 ? quantity : 0,
+        Warehouse2: warehouseId === 2 ? quantity : 0,
+        Warehouse3: warehouseId === 3 ? quantity : 0
+      }
+    };
+    //pushed object into existing array
+    productList.push(product);
+    writeJSONFile(productListFile, productList);
+    res.send("Added product to inventory: " + JSON.stringify(product));
   }
-  // build object to put into inventory.json
-  const product = {
-    description,
-    name: title,
-    id: productId,
-    product: {
-      Warehouse1: warehouseId === 1 ? quantity : 0,
-      Warehouse2: warehouseId === 2 ? quantity : 0,
-      Warehouse3: warehouseId === 3 ? quantity : 0
-    }
-  };
-  //pushed object into existing array
-  productList.push(product);
-  writeJSONFile(productListFile, productList);
-  res.send("Added product to inventory: " + JSON.stringify(product));
 });
 
 router.delete("/:product", (req, res) => {
   const productId = req.params.product; //id of the product to delete
+  const warehouseName = req.body.warehouseName;
   let index = -1;
   for (let i = 0; i < productList.length; i++) {
     if (productList[i].id === productId) {
@@ -79,10 +80,11 @@ router.delete("/:product", (req, res) => {
     return res.send(
       `Product ${productId} could not be deleted because it doesn't exist`
     );
+  } else {
+    delete productList[index].product[warehouseName];
+    writeJSONFile(productListFile, productList);
+    res.send(`deleted ${productId} at ${warehouseName}`);
   }
-  productList.splice(index, index + 1);
-  writeJSONFile(productListFile, productList);
-  res.send(`deleted product ${productId}`);
 });
 
 function findFromInventoryByUuid(uuid) {

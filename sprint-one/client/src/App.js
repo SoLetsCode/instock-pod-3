@@ -45,7 +45,10 @@ class App extends Component {
       <>
         <Router>
           <Header />
-          <Inventory product={this.state.product} />
+          <Inventory
+            inventory={this.state.inventory}
+            location={this.state.location}
+          />
           <Createnew />
           <Locations />
         </Router>

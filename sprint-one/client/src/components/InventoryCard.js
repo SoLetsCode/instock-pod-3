@@ -71,7 +71,11 @@ export default class InventoryCard extends Component {
           />
           {/* renders remove button based on togglestate */}
           {this.state.hide ? (
-            <div className="inventory__remove" onClick={this.removeClick}>
+            <div
+              className="inventory__remove"
+              onClick={this.removeClick}
+              onMouseOut={this.kebabClick}
+            >
               {" "}
               Remove{" "}
             </div>
