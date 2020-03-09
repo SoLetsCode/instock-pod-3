@@ -18,7 +18,9 @@ class App extends Component {
     super(props);
     this.state = {
       location: {},
-      inventory: {}
+      inventory: {},
+      product: {},
+      warehouse: {}
     };
   }
 
@@ -44,12 +46,19 @@ class App extends Component {
     axios
       .get("/api/inventory")
       .then(res => {
-        console.log(res);
         this.setState({
           inventory: res.data
         });
       })
       .catch(err => console.log(err));
+  };
+
+  getWarehouse = () => {
+    //I think we will use this for the specific warehouse component
+  };
+
+  getProduct = () => {
+    //I think we will use this for the specific product component
   };
 
   render() {

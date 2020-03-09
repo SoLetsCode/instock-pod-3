@@ -124,6 +124,7 @@
     @include m-font-h2;
     font-family: avenir-demi;
     margin: 0;
+    color: black;
 
     @include tablet {
       @include dt-font-p;

@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 //images
 import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
@@ -13,8 +14,6 @@ export default class InventoryCard extends Component {
   }
 
   removeClick = () => {
-    console.log(`/api/inventory/${this.props.productName}`);
-    console.log(this.props.warehouseName);
     axios
       .delete(`/api/inventory/${this.props.productName}`, {
         // needed too add a req.body to a delete request
@@ -39,7 +38,12 @@ export default class InventoryCard extends Component {
           <div className="inventory__container">
             <p className="inventory__label">ITEM</p>
             <div className="inventory__name-description-container">
-              <p className="inventory__name">{this.props.productName}</p>
+              <Link
+                to={`inventory/${this.props.productName}`}
+                className="inventory__name"
+              >
+                {this.props.productName}{" "}
+              </Link>
               <p className="inventory__description">
                 {this.props.productDescription}
               </p>
