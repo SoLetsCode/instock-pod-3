@@ -21,6 +21,6 @@
     "description": "spicy bubbles",
     "name": "pepper",
     "id": "pepper",
-    "product": { "Warehouse1": "500", "Warehouse2": 0, "Warehouse3": 0 }
+    "product": { "Warehouse1": "500", "Warehouse3": 0 }
   }
 ]
