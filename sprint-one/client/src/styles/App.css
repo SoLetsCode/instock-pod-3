@@ -83,10 +83,6 @@
   display: none;
 }
 
-.locations__data-warehouse-segment {
-  background-color: orange;
-}
-
 .locations__data-warehouse-info {
   /*    display: flex;
     flex-direction: column; */
@@ -545,12 +541,17 @@ a {
   line-height: 32px;
 }
 
+.warehouses__data-address, .warehouses__data-city, .warehouses__data-contact-person, .warehouses__data-contact-contact-info {
+  padding: 20px 0;
+}
+
 @media only screen and (min-width: 767px) {
   .warehouses {
     font-size: 14px;
     line-height: 22px;
   }
   .warehouses__header-wrapper {
+    padding: 0 0 50px 0;
     border-bottom: 1px solid rgba(50, 50, 50, 0.2);
   }
   .warehouses__title {
@@ -561,13 +562,31 @@ a {
     font-size: 36px;
     line-height: 44px;
   }
+  .warehouses__details {
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .warehouses__data-warehouse-address-info, .warehouses__data-contact-info {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1;
+            flex: 1 1;
+  }
 }
 
-.products {
-  border: 1px solid navy;
+.products-summary {
+  background: #fafafa;
 }
 
-.products__product-card {
+.products-summary__card-header {
+  display: none;
+}
+
+.products-summary__product-card {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -578,8 +597,32 @@ a {
       -ms-flex-align: start;
           align-items: flex-start;
   margin: 16px 0 0 0;
-  background: #fafafa;
   border-bottom: 1px solid #e1e1e1;
+}
+
+@media only screen and (min-width: 767px) {
+  .products-summary__card-header {
+    padding: 20px 0;
+    color: #afafaf;
+  }
+  .products-summary__card-header, .products-summary__product-card, .products-summary__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .products-summary__label {
+    display: none;
+  }
 }
 
 /* reset the page */
