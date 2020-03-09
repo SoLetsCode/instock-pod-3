@@ -524,6 +524,8 @@ a {
 @media only screen and (min-width: 1440px) {
   .inventory__remove {
     height: 44px;
+    padding: 0px;
+    padding: 10px;
   }
 }
 
