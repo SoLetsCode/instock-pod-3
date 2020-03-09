@@ -48,18 +48,32 @@ router.post("/:product", (req, res) => {
     res.status(400).send("Missing information from required fields");
     //check if product exists. Don't add if it does
   } else if (findFromInventoryByUuid(productId) !== undefined) {
-    res.status(400).send(`Product ${productId} already exists`);
+    //we have the product, now we need to check if the warehouse exists
+    let index = productList.indexOf(findFromInventoryByUuid(productId));
+
+    if (productList[index].product.hasOwnProperty(warehouseId)) {
+      //warehouse exists, so add additional quantity to it
+      let sum =
+        Number(productList[index].product[warehouseId]) + Number(quantity);
+      productList[index].product[warehouseId] = sum;
+      res.send(
+        `Added an additional ${quantity} of ${productId} at ${warehouseId}`
+      );
+    } else {
+      //add warehouse and quantity of product.
+      productList[index].product[warehouseId] = quantity;
+      res.send(`Adding ${productId} to ${warehouseId}`);
+    }
+
+    writeJSONFile(productListFile, productList);
   } else {
     const product = {
       description,
       name: title,
       id: productId,
-      product: {
-        Warehouse1: warehouseId === 1 ? quantity : 0,
-        Warehouse2: warehouseId === 2 ? quantity : 0,
-        Warehouse3: warehouseId === 3 ? quantity : 0
-      }
+      product: {}
     };
+    product.product[warehouseId] = Number(quantity);
     //pushed object into existing array
     productList.push(product);
     writeJSONFile(productListFile, productList);
@@ -70,9 +84,7 @@ router.post("/:product", (req, res) => {
 router.delete("/:product", (req, res) => {
   const productId = req.params.product; //id of the product to delete
   const warehouseName = req.body.warehouseName;
-  console.log(req.body);
-  console.log(warehouseName);
-  console.log(productId);
+
   let index = -1;
   for (let i = 0; i < productList.length; i++) {
     if (productList[i].id === productId) {
@@ -91,7 +103,7 @@ router.delete("/:product", (req, res) => {
 });
 
 function findFromInventoryByUuid(uuid) {
-  return productList.find(p => p.id === uuid);
+  return productList.find(p => p.name === uuid);
 }
 
 module.exports = router;
