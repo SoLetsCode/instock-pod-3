@@ -11,6 +11,8 @@ import Createnew from "./components/Createnew";
 import axios from "axios";
 import Locations from "./components/Location";
 import Warehouses from "./components/Warehouses";
+import Products from "./components/Products";
+
 import "./styles/App.css";
 
 class App extends Component {
@@ -74,6 +76,11 @@ class App extends Component {
             </Route>
             {/* below is where you will put the specific product component. You also need to use render method */}
             <Route path="/inventory/:product" />
+            <Products
+              path="/products"
+              inventory={this.state.inventory}
+              location={this.state.location}
+            />
             <Route path="/inventory">
               <Inventory
                 inventory={this.state.inventory}

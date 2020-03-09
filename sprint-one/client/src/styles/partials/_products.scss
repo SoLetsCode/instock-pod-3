@@ -1,0 +1,149 @@
+.products {
+  margin: 0 auto;
+  padding: 32px 16px 0 16px;
+  width: 100%;
+  max-width: 288px;
+
+  &__header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  &__header-back-btn {
+    width: 50px;
+  }
+
+  &__header-back-icon {
+  }
+
+  &__header-title {
+    margin: 0 0 16px 0;
+    padding: 32px 0 16px 0;
+
+    width: 80%;
+
+    font-size: 22px;
+    font-family: avenir-bold;
+  }
+
+  &__header-instock-btn {
+    padding: 10px;
+    margin: 0 0 16px 0;
+    border-radius: 5px;
+
+    width: 180px;
+
+    background-color: #69b02d;
+    color: #fff;
+
+    font-family: avenir-bold;
+    @include m-font-h1;
+  }
+
+  &__segment-panels {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    border-top: 10px solid red;
+    border-bottom: 10px solid red;
+  }
+
+  &__segment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__segment-title {
+    margin: 0 0 16px 0;
+
+    color: $silver;
+
+    font-family: avenir-demi;
+    @include m-font-label;
+  }
+
+  &__segment-content {
+    margin: 0 0 24px 0;
+
+    @include m-font-p;
+  }
+
+  &__edit-btn-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__edit-btn {
+    margin: 0 auto;
+    border-radius: 5px;
+
+    height: 50px;
+    width: 100%;
+
+    background-color: #004892;
+    color: $alabaster;
+  }
+
+  @include tablet {
+    width: 100%;
+    max-width: 720px;
+    &__header {
+      border-bottom: 1px solid $silver;
+      flex-wrap: no-wrap;
+    }
+
+    &__header-title {
+      width: 30%;
+    }
+
+    &__segment {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    &__segment-flex-item {
+      width: 100%;
+      flex: 1 1;
+    }
+
+    &__segment-final {
+      margin-bottom: 10px;
+    }
+
+    &__edit-btn-wrapper {
+      margin: 0 0 0 0;
+      border: 1px solid red;
+      justify-content: flex-start;
+      border-top: 1px solid $silver;
+    }
+
+    &__edit-btn {
+      width: 100px;
+    }
+  }
+
+  @include desktop {
+    width: 100%;
+    max-width: 1080px;
+    &__header-title {
+      margin: 0 0 16px 0;
+      padding: 32px 0 16px 0;
+      font-size: 22px;
+
+      width: 100px;
+    }
+
+    &__segment-panels {
+      flex-direction: row;
+    }
+  }
+}
