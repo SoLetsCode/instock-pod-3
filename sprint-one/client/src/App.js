@@ -58,6 +58,8 @@ class App extends Component {
         <Router>
           <Header />
           <Switch>
+            {/* below is where you will put the specific product component. You also need to use render method */}
+            <Route path="/inventory/:product" />
             <Route path="/inventory">
               <Inventory
                 inventory={this.state.inventory}
@@ -65,6 +67,8 @@ class App extends Component {
                 getInventoryList={this.getInventoryList}
               />
             </Route>
+            {/* below is where you will put the specific warehouse component. You also need to use render method*/}
+            <Route path="/location/:warehouse" />
             <Route path="/location">
               <Locations />
             </Route>
