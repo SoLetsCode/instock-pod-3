@@ -40,6 +40,18 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
+  getInventoryList = () => {
+    axios
+      .get("/api/inventory")
+      .then(res => {
+        console.log(res);
+        this.setState({
+          inventory: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
   render() {
     return (
       <>
@@ -48,6 +60,7 @@ class App extends Component {
           <Inventory
             inventory={this.state.inventory}
             location={this.state.location}
+            getInventoryList={this.getInventoryList}
           />
           <Createnew />
           <Locations />

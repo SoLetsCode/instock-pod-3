@@ -22,9 +22,8 @@ export default class InventoryCard extends Component {
           warehouseName: this.props.warehouseName
         }
       })
+      .then(this.props.getInventoryList)
       .catch(err => console.log(err));
-    console.log("removing ", this.props.productName);
-    console.log("from ", this.props.warehouseName);
   };
 
   kebabClick = event => {

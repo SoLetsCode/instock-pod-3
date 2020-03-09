@@ -34,6 +34,7 @@ export default class Inventory extends Component {
             province={location[warehouseName].province}
             quantity={inventory[index].product[warehouseName]}
             warehouseName={warehouseName}
+            getInventoryList={this.props.getInventoryList}
             key={uuidv4()}
           />
         );
