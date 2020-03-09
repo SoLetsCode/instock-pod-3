@@ -1,7 +1,8 @@
 .products {
   margin: 0 auto;
   padding: 32px 16px 0 16px;
-  width: 288px;
+  width: 100%;
+  max-width: 288px;
 
   &__header {
     display: flex;
@@ -40,6 +41,16 @@
 
     font-family: avenir-bold;
     @include m-font-h1;
+  }
+
+  &__segment-panels {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    border-top: 10px solid red;
+    border-bottom: 10px solid red;
   }
 
   &__segment {
@@ -82,7 +93,8 @@
   }
 
   @include tablet {
-    width: 720px;
+    width: 100%;
+    max-width: 720px;
     &__header {
       border-bottom: 1px solid $silver;
       flex-wrap: no-wrap;
@@ -104,12 +116,14 @@
     }
 
     &__segment-final {
-      border-bottom: 1px solid $silver;
       margin-bottom: 10px;
     }
 
     &__edit-btn-wrapper {
+      margin: 0 0 0 0;
+      border: 1px solid red;
       justify-content: flex-start;
+      border-top: 1px solid $silver;
     }
 
     &__edit-btn {
@@ -117,7 +131,9 @@
     }
   }
 
-  @include tablet {
+  @include desktop {
+    width: 100%;
+    max-width: 1080px;
     &__header-title {
       margin: 0 0 16px 0;
       padding: 32px 0 16px 0;
@@ -125,8 +141,9 @@
 
       width: 100px;
     }
-  }
 
-  @include desktop {
+    &__segment-panels {
+      flex-direction: row;
+    }
   }
 }
