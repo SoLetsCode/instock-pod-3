@@ -18,7 +18,9 @@ class App extends Component {
     super(props);
     this.state = {
       location: {},
-      inventory: {}
+      inventory: {},
+      product: {},
+      warehouse: {}
     };
 
     //bind
@@ -42,16 +44,49 @@ class App extends Component {
       .catch(err => console.log(err));
   }
 
-  //hand.e
+  getInventoryList = () => {
+    axios
+      .get("/api/inventory")
+      .then(res => {
+        this.setState({
+          inventory: res.data
+        });
+      })
+      .catch(err => console.log(err));
+  };
+
+  getWarehouse = () => {
+    //I think we will use this for the specific warehouse component
+  };
+
+  getProduct = () => {
+    //I think we will use this for the specific product component
+  };
 
   render() {
     return (
       <>
         <Router>
           <Header />
-          <Inventory product={this.state.product} />
-          <Createnew />
-          <Locations />
+          <Switch>
+            <Route path="/" exact>
+              <Redirect to="/inventory" />
+            </Route>
+            {/* below is where you will put the specific product component. You also need to use render method */}
+            <Route path="/inventory/:product" />
+            <Route path="/inventory">
+              <Inventory
+                inventory={this.state.inventory}
+                location={this.state.location}
+                getInventoryList={this.getInventoryList}
+              />
+            </Route>
+            {/* below is where you will put the specific warehouse component. You also need to use render method*/}
+            <Route path="/location/:warehouse" />
+            <Route path="/location">
+              <Locations />
+            </Route>
+          </Switch>
         </Router>
       </>
     );
