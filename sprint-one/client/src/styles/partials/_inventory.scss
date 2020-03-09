@@ -5,6 +5,10 @@
     padding: 32px 24px 0 24px;
   }
 
+  @include desktop {
+    padding: 48px 180px 0 180px;
+  }
+
   &__product-card {
     display: flex;
     justify-content: space-between;
@@ -31,8 +35,15 @@
   &__title {
     @include m-font-h1;
     font-family: avenir-bold;
-    margin: 0;
     margin: 0 0 16px 0;
+
+    @include tablet {
+      @include dt-font-h1;
+    }
+
+    @include desktop {
+      shape-margin: 0 0 48px 0;
+    }
   }
 
   &__search-form {
@@ -43,10 +54,20 @@
     width: 250px;
     margin: 0 0 32px 0;
     background-color: $alabaster;
+
+    @include desktop {
+      margin: 0 0 40px 0;
+      height: 48px;
+      width: 252px;
+    }
   }
 
   &__search-img {
     margin-right: 10px;
+
+    @include desktop {
+      margin: 0 8px 0 16px;
+    }
   }
 
   &__search-input {
@@ -54,6 +75,10 @@
     background-color: $alabaster;
     font-family: avenir;
     border: none;
+
+    @include tablet {
+      @include dt-font-p;
+    }
 
     &:focus {
       outline: transparent;
@@ -71,17 +96,39 @@
     }
   }
 
+  &__container {
+    @include tablet {
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    @include desktop {
+      height: 80px;
+    }
+  }
+
   &__label {
     @include m-font-label;
     font-family: avenir-demi;
     color: $silver;
     margin: 0 0 16px 0;
+
+    @include tablet {
+      @include dt-font-label;
+    }
   }
 
   &__name {
     @include m-font-h2;
     font-family: avenir-demi;
     margin: 0;
+    color: black;
+
+    @include tablet {
+      @include dt-font-p;
+    }
   }
 
   &__description {
@@ -89,6 +136,7 @@
     margin: 0 0 24px 0;
 
     @include tablet {
+      @include dt-font-p;
     }
   }
 
@@ -103,13 +151,26 @@
     }
   }
 
-  //expirmental code to implement remove button
+  &__kebab {
+    @include desktop {
+      height: 22px;
+    }
+  }
+
   &__remove {
     width: 156px;
-    padding: 20px;
+    padding: 15px;
     position: absolute;
     top: 25px;
-    background-color: $mercury;
+    background-color: $alabaster;
+    border: 1px solid $mercury;
+    border-radius: 4px;
+
+    @include desktop {
+      height: 44px;
+      padding: 0px;
+      padding: 10px;
+    }
   }
 
   &__add-button {
@@ -123,5 +184,11 @@
     position: fixed;
     bottom: 100px;
     right: 50px;
+
+    @include desktop {
+      height: 80px;
+      width: 80px;
+      right: 230px;
+    }
   }
 }

@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 //images
 import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
 
 export default class InventoryCard extends Component {
-  //takes city productDescription productName city province quantity
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,9 +14,15 @@ export default class InventoryCard extends Component {
   }
 
   removeClick = () => {
-    //add in the axios call to remove item here. Sending the productName and warehouseName in the req.body.
-    console.log("removing ", this.props.productName);
-    console.log("from, ", this.props.warehouseName);
+    axios
+      .delete(`/api/inventory/${this.props.productName}`, {
+        // needed too add a req.body to a delete request
+        data: {
+          warehouseName: this.props.warehouseName
+        }
+      })
+      .then(this.props.getInventoryList)
+      .catch(err => console.log(err));
   };
 
   kebabClick = event => {
@@ -33,7 +38,12 @@ export default class InventoryCard extends Component {
           <div className="inventory__container">
             <p className="inventory__label">ITEM</p>
             <div className="inventory__name-description-container">
-              <p className="inventory__name">{this.props.productName}</p>
+              <Link
+                to={`inventory/${this.props.productName}`}
+                className="inventory__name"
+              >
+                {this.props.productName}{" "}
+              </Link>
               <p className="inventory__description">
                 {this.props.productDescription}
               </p>
@@ -71,7 +81,11 @@ export default class InventoryCard extends Component {
           />
           {/* renders remove button based on togglestate */}
           {this.state.hide ? (
-            <div className="inventory__remove" onClick={this.removeClick}>
+            <div
+              className="inventory__remove"
+              onClick={this.removeClick}
+              onMouseOut={this.kebabClick}
+            >
               {" "}
               Remove{" "}
             </div>
