@@ -1,12 +1,10 @@
 import React, { Component } from "react";
-import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 //images
 import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
 
 export default class InventoryCard extends Component {
-  //takes city productDescription productName city province quantity
-
   constructor(props) {
     super(props);
     this.state = {
@@ -15,9 +13,18 @@ export default class InventoryCard extends Component {
   }
 
   removeClick = () => {
-    //add in the axios call to remove item here. Sending the productName and warehouseName in the req.body.
+    console.log(`/api/inventory/${this.props.productName}`);
+    console.log(this.props.warehouseName);
+    axios
+      .delete(`/api/inventory/${this.props.productName}`, {
+        // needed too add a req.body to a delete request
+        data: {
+          warehouseName: this.props.warehouseName
+        }
+      })
+      .catch(err => console.log(err));
     console.log("removing ", this.props.productName);
-    console.log("from, ", this.props.warehouseName);
+    console.log("from ", this.props.warehouseName);
   };
 
   kebabClick = event => {
