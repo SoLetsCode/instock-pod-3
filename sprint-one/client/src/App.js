@@ -103,6 +103,7 @@ class App extends Component {
                 />
               )}
             />
+
             <Route path="/location">
               <Locations
                 inventory={this.state.inventory}

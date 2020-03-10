@@ -65,7 +65,14 @@ export default class Inventory extends Component {
         <div className="inventory__add-button" onClick={this.addClick}>
           <img src={addImg} alt="add button" className="inventory__add-img" />
         </div>
-        {this.state.show ? <CreateNew /> : ""}
+        {this.state.show ? (
+          <CreateNew
+            addClick={this.addClick}
+            getInventoryList={this.props.getInventoryList}
+          />
+        ) : (
+          ""
+        )}
       </div>
     );
   }
