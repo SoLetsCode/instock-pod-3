@@ -1,17 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 // IMAGES
 import magIcon from "../assets/icons/SVG/icon-search.svg";
 import arrowRtIcon from "../assets/icons/SVG/icon-arrow-right.svg";
-
 // FUNCTIONS
 // Component Header
 const ComponentHeader = () => {
   return (
     <header className="locations__header-wrapper">
       <h2 className="locations__title">Locations</h2>
-
       <form className="locations__search-form" action="">
         <img
           src={magIcon}
@@ -41,50 +38,55 @@ const TableHeader = () => {
 
 // Locations
 const TableBody = location => {
-  return (
-    <section className="locations__data-body">
-      <div className="locations__data-warehouse-segment locations__data-warehouse-info">
-        <div className="locations__data-warehouse-location-info">
-          <h2 className="locations__data-warehouse-location-info-title">
-            Warehouse Number 1
-          </h2>
-          <div className="site-icon-wrapper">
-            <img className="site-icon" src={arrowRtIcon} />
+  const LocationData = Object.keys(location.location).map((loc, i) => {
+    return (
+      <>
+        <div className="locations__data-warehouse-segment locations__data-warehouse-info">
+          <div className="locations__data-warehouse-location-info">
+            <h2 className="locations__data-warehouse-location-info-title">
+              {location.location[loc].name}
+            </h2>
+            <div className="site-icon-wrapper">
+              <img className="site-icon" src={arrowRtIcon} />
+            </div>
+          </div>
+          <div className="locations__data-warehouse-address-info">
+            <div>{location.location[loc].address}</div>
           </div>
         </div>
-        <div className="locations__data-warehouse-address-info">
-          <div>469 King St W, Toronto, ON</div>
+        <div className="locations__data-warehouse-segment locations__data-contact-person">
+          <div>{location.location[loc].managerName}</div>
+          <div>{location.location[loc].managerTitle}</div>
         </div>
-      </div>
-
-      <div className="locations__data-warehouse-segment locations__data-contact-person">
-        <div>Maria Weinberg</div>
-        <div>Warehouse Manager</div>
-      </div>
-
-      <div className="locations__data-warehouse-segment locations__data-contact-info">
-        <div>+1 416 678 2345</div>
-        <div>weinberg@instock.com</div>
-      </div>
-
-      <div className="locations__data-warehouse-segment locations__data-categories">
-        <div>
-          Industrial, Automotive, Heavy, Mechancial, Engineering, Transportation
+        <div className="locations__data-warehouse-segment locations__data-contact-info">
+          <div>{location.location[loc].phone}</div>
+          <div>{location.location[loc].email}</div>
         </div>
-      </div>
-    </section>
-  );
+        <div className="locations__data-warehouse-segment locations__data-categories">
+          <div>{location.location[loc].category}</div>
+        </div>
+      </>
+    );
+  });
+  console.log(LocationData);
+  return <section className="locations__data-body">{LocationData}</section>;
 };
 //const getTableBody = getTableBodyData();
-
 // LOCATIONS COMPONENT
 const Locations = props => {
   const { location } = props;
-
+  console.log(location);
   // THE RETURN
+  for (let warehouse in location) {
+    console.log(
+      location[warehouse].name,
+      location[warehouse].address,
+      location[warehouse].category
+    );
+  }
+
   return (
     <section className="locations">
-      {console.log("Locations component has access to: ", props.location)}
       <section className="locations__data-wrapper">
         <ComponentHeader />
         <TableHeader />
@@ -93,5 +95,4 @@ const Locations = props => {
     </section>
   );
 };
-
 export default Locations;

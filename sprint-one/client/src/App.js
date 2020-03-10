@@ -66,6 +66,8 @@ class App extends Component {
   };
 
   render() {
+    if (Object.keys(this.state.location).length === 0)
+      return <h2>Loading...</h2>;
     return (
       <>
         <Router>
@@ -90,10 +92,10 @@ class App extends Component {
             </Route>
             {/* below is where you will put the specific warehouse component. You also need to use render method*/}
             <Route path="/location/:warehouse" />
-            <Warehouses
+            {/* <Warehouses
               inventory={this.state.inventory}
               location={this.state.location}
-            />
+            /> */}
             <Route path="/location">
               <Locations
                 inventory={this.state.inventory}
