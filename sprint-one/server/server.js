@@ -1,8 +1,10 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
 //middleware - this gets run on each call
 app.use(express.json()); // this is so we can access req.body
+app.use(cors());
 
 //routes
 const location = require("./routes/api/location.js");
