@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 import Header from "./components/Header";
 import Inventory from "./components/Inventory";
-import Createnew from "./components/Createnew";
 import axios from "axios";
 import Locations from "./components/Location";
 import Warehouses from "./components/Warehouses";
@@ -24,8 +23,6 @@ class App extends Component {
       product: {},
       warehouse: {}
     };
-
-    //bind
   }
 
   componentDidMount() {
@@ -76,7 +73,6 @@ class App extends Component {
             <Route path="/" exact>
               <Redirect to="/inventory" />
             </Route>
-            {/* below is where you will put the specific product component. You also need to use render method */}
             <Route path="/inventory/:product">
               <Products
                 inventory={this.state.inventory}
@@ -90,11 +86,6 @@ class App extends Component {
                 getInventoryList={this.getInventoryList}
               />
             </Route>
-            {/* below is where you will put the specific warehouse component. You also need to use render method*/}
-            {/* <Route
-              path='/dashboard'
-              render={(props) => <Dashboard {...props} isAuthed={true} />}
-            /> */}
             <Route
               path="/location/:warehouse"
               render={props => (
@@ -102,6 +93,7 @@ class App extends Component {
                   {...props}
                   inventory={this.state.inventory}
                   location={this.state.location}
+                  getInventoryList={this.getInventoryList}
                 />
               )}
             />

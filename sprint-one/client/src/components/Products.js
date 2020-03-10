@@ -5,7 +5,11 @@ const Products = () => {
     <section className="products">
       <div className="products__header">
         <div className="products__header-back-btn">
-          <img className="products__header-back-icon" src={BackArrowIcon} />
+          <img
+            className="products__header-back-icon"
+            src={BackArrowIcon}
+            alt="Back arrow"
+          />
         </div>
         <div className="products__header-title">Products</div>
         <button className="products__header-instock-btn">In Stock</button>

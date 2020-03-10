@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import uuid, { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import InventoryCard from "./InventoryCard";
 import CreateNew from "./Createnew";
 
 //images
 import magImg from "../assets/icons/SVG/icon-search.svg";
 import addImg from "../assets/icons/SVG/icon-add.svg";
-import kebabImg from "../assets/icons/SVG/icon-kebab-default.svg";
 
 export default class Inventory extends Component {
   state = {
