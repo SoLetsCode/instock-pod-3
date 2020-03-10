@@ -1,14 +1,37 @@
 import React from "react";
 
 import Toggle from "./Toggle";
+import axios from "axios";
 
-export default function Createnew() {
-  return (
-    <form>
-      <div class="createnew__div2-1">
-        <strong>div2-1</strong>
-        <br />
-        (z-index: 10)
+export default class Createnew extends React.Component {
+  state = {
+    chosenWarehouse: "Warehouse1"
+  };
+
+  selectionClick = event => {
+    this.setState({
+      chosenWarehouse: event.target.value
+    });
+  };
+
+  submitHandler = event => {
+    event.preventDefault();
+    this.props.addClick();
+    this.props.getInventoryList();
+    console.log(event.target);
+    console.log(event.target.title.value);
+    axios
+      .post(`http://localhost:5000/api/inventory/${event.target.name.value}`, {
+        title: event.target.name.value,
+        description: event.target.description.value,
+        quantity: event.target.quantity.value,
+        warehouse: this.state.chosenWarehouse
+      })
+      .then(res => console.log(res.data));
+  };
+  render() {
+    return (
+      <form onSubmit={this.submitHandler}>
         <div className="createnew__all">
           <div className="createnew__product">
             <div className="createnew__producti">
@@ -16,14 +39,19 @@ export default function Createnew() {
               <textarea
                 className="createnew__textbox"
                 placeholder="Item Name"
+                name="name"
               ></textarea>
             </div>
             <div className="createnew__warehousei">
               <p className="createnew__textboxtitles">WAREHOUSE</p>
-              <select className="createnew__dropdown">
-                <option>Warehouse 1 </option>
-                <option>Warehouse 2 </option>
-                <option>Warehouse 3 </option>
+              <select
+                onChange={this.selectionClick}
+                name="selection"
+                id="createnew-selection"
+              >
+                <option value="Warehouse1">Warehouse1</option>
+                <option value="Warehouse2">Warehouse2</option>
+                <option value="Warehouse3">Warehouse3</option>
               </select>
             </div>
           </div>
@@ -33,11 +61,12 @@ export default function Createnew() {
               <textarea
                 className="createnew__textbox"
                 placeholder="City"
+                name="city"
               ></textarea>
             </div>
             <div className="createnew__countryi">
               <p className="createnew__textboxtitles">COUNTRY</p>
-              <select className="createnew__dropdown">
+              <select>
                 <option>Canada </option>
                 <option>United States </option>
                 <option>Portugal </option>
@@ -50,6 +79,7 @@ export default function Createnew() {
               <textarea
                 className="createnew__textbox"
                 placeholder="0"
+                name="quantity"
               ></textarea>
             </div>
             <div className="createnew__instock">
@@ -62,18 +92,19 @@ export default function Createnew() {
             <textarea
               className="createnew__textbox"
               placeholder="(Optional)"
+              name="description"
             ></textarea>
           </div>
-          <div className="createnew__bottom">
-            <div className="createnew__save">
-              <button className="createnew__savebutton">SAVE</button>
-            </div>
-            <div className="createnew__cancel">
-              <span> CANCEL</span>
-            </div>
+          <div className="createnew__save">
+            <button>
+              <span>SAVE</span>
+            </button>
+          </div>
+          <div className="createnew__cancel">
+            <span onClick={this.props.addClick}> CANCEL</span>
           </div>
         </div>
-      </div>
-    </form>
-  );
+      </form>
+    );
+  }
 }
