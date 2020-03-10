@@ -1,111 +1,90 @@
 import React from "react";
 import backArrowIcon from "../assets/icons/SVG/icon-back-arrow.svg";
 import kebabIcon from "../assets/icons/SVG/icon-kebab-default.svg";
+import { v4 as uuidv4 } from "uuid";
+
+import InventoryCard from "./InventoryCard";
 
 const Warehouses = ({ location, inventory, match }) => {
   const capitalFirst = string => {
     let word = string[0].toUpperCase() + string.slice(1);
     return word;
   };
+
+  let warehouse = capitalFirst(match.params.warehouse);
+  //creating this variable so we don't have to keep calling it
+
+  let findInventoryByWarehouse = warehouse => {
+    //double for loop to find which products exist at which warehouse
+    let tempList = [];
+    for (let index in inventory) {
+      for (let warehouseName in inventory[index].product) {
+        if (warehouseName === warehouse) {
+          tempList.push(
+            //creating each row of the table
+            <InventoryCard
+              productName={inventory[index].name}
+              productDescription={inventory[index].description}
+              city={location[warehouseName].city}
+              province={location[warehouseName].province}
+              quantity={inventory[index].product[warehouseName]}
+              warehouseName={warehouseName}
+              getInventoryList={inventory}
+              key={uuidv4()}
+            />
+          );
+        }
+      }
+    }
+    return tempList;
+  };
+
+  let inventoryList = findInventoryByWarehouse(warehouse);
+
   return (
-    <section className="warehouses">
-      <header className="warehouses__header-wrapper">
-        <div className="warehouses__nav-arrow">
-          <img className="site-icon" src={backArrowIcon} />
-        </div>
-        <h2 className="warehouses__title">
-          {capitalFirst(match.params.warehouse)}
-        </h2>
-      </header>
+    !!location[warehouse] && (
+      <section className="warehouses">
+        <header className="warehouses__header-wrapper">
+          <div className="warehouses__nav-arrow">
+            <img className="site-icon" src={backArrowIcon} />
+          </div>
+          <h2 className="warehouses__title">{location[warehouse].name}</h2>
+        </header>
 
-      <section className="warehouses__data-wrapper">
-        <section className="warehouses__data-body">
-          <section className="warehouses__data-segment">
-            <div className="warehouses__details">
-              <div className="warehouses__data-warehouse-address-info">
-                <h2>Address</h2>
-                <div className="warehouses__data-address">
-                  <div>123 Main Stree W.</div>
-                  <div>Suite 201</div>
+        <section className="warehouses__data-wrapper">
+          <section className="warehouses__data-body">
+            <section className="warehouses__data-segment">
+              <div className="warehouses__details">
+                <div className="warehouses__data-warehouse-address-info">
+                  <h2>Address</h2>
+                  <div className="warehouses__data-address">
+                    <div>{location[warehouse].address}</div>
+                    <div>{location[warehouse].suite}</div>
+                  </div>
+                  <div className="warehouses__data-city">
+                    <div>{`${location[warehouse].city},${location[warehouse].province}`}</div>
+                    <div>{`${location[warehouse].postal},${location[warehouse].country}`}</div>
+                  </div>
                 </div>
-                <div className="warehouses__data-city">
-                  <div>Toronto, ON</div>
-                  <div>M65 GB7 CA</div>
-                </div>
-              </div>
-              <div className="warehouses__data-contact-info">
-                <h2>Contact</h2>
-                <div className="warehouses__data-contact-person">
-                  <div>Maria Weinberg</div>
-                  <div>Warehouse Manager</div>
-                </div>
-                <div className="warehouses__data-contact-contact-info">
-                  <div>+1 416 678 2345</div>
-                  <div>weinberg@instock.com</div>
-                </div>
-              </div>
-            </div>
-
-            <section className="products-summary">
-              <section className="products-summary__card-header">
-                <div>ITEM</div>
-                <div>LAST ORDERED</div>
-                <div>LOCATION</div>
-                <div>QUANTITY</div>
-                <div>STATUS</div>
-              </section>
-
-              <div className="products-summary__product-card">
-                <div className="products-summary__content">
-                  <div className="products-summary__container">
-                    <p className="products-summary__label">ITEM</p>
-                    <div className="products-summary_name-description-container">
-                      <p className="products-summary__name">Name here</p>
-                      <p className="products-summary__description">
-                        Description Here
-                      </p>
-                    </div>
+                <div className="warehouses__data-contact-info">
+                  <h2>Contact</h2>
+                  <div className="warehouses__data-contact-person">
+                    <div>{location[warehouse].managerName}</div>
+                    <div>{location[warehouse].managerTitle}</div>
                   </div>
-
-                  <div className="products-summary__container">
-                    <p className="products-summary__label">LAST ORDERED</p>
-                    <p className="products-summary__description">
-                      Last Ordered Here
-                    </p>
-                  </div>
-
-                  <div className="products-summary__container">
-                    <p className="products-summary__label">LOCATION</p>
-                    <p className="products-summary__description">
-                      Location Here
-                    </p>
-                  </div>
-
-                  <div className="products-summary__container">
-                    <p className="products-summary__label">QUANTITY</p>
-                    <p className="products-summary__description">
-                      quantity here
-                    </p>
-                  </div>
-
-                  <div className="products-summary__container">
-                    <p className="products-summary__label">STATUS</p>
-                    <p className="products-summary__description">
-                      In Stock Here
-                    </p>
-                  </div>
-
-                  <div className="products-summary__container">
-                    <img src={kebabIcon} alt="kebab" />
-                    <div className="products-summary__remove">Remove</div>
+                  <div className="warehouses__data-contact-contact-info">
+                    <div>{location[warehouse].phone}</div>
+                    <div>{location[warehouse].email}</div>
                   </div>
                 </div>
               </div>
             </section>
           </section>
         </section>
+        {/* adding inventory list here */}
+        <div>{inventoryList}</div>
       </section>
-    </section>
+    )
   );
 };
 
