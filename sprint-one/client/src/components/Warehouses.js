@@ -45,7 +45,7 @@ const Warehouses = ({ location, inventory, match, getInventoryList }) => {
       <section className="warehouses">
         <header className="warehouses__header-wrapper">
           <div className="warehouses__nav-arrow">
-            <img className="site-icon" src={backArrowIcon} />
+            <img className="site-icon" src={backArrowIcon} alt="back arrow" />
           </div>
           <h2 className="warehouses__title">{location[warehouse].name}</h2>
         </header>

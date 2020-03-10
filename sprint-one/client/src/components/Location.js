@@ -50,7 +50,7 @@ const TableBody = location => {
               </Link>
             </h2>
             <div className="site-icon-wrapper">
-              <img className="site-icon" src={arrowRtIcon} />
+              <img className="site-icon" src={arrowRtIcon} alt="right arrow" />
             </div>
           </div>
           <div className="locations__data-warehouse-address-info">
@@ -78,15 +78,6 @@ const TableBody = location => {
 // LOCATIONS COMPONENT
 const Locations = props => {
   const { location } = props;
-  console.log(location);
-  // THE RETURN
-  for (let warehouse in location) {
-    console.log(
-      location[warehouse].name,
-      location[warehouse].address,
-      location[warehouse].category
-    );
-  }
 
   return (
     <section className="locations">
