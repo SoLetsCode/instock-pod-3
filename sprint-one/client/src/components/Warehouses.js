@@ -1,11 +1,10 @@
 import React from "react";
 import backArrowIcon from "../assets/icons/SVG/icon-back-arrow.svg";
-import kebabIcon from "../assets/icons/SVG/icon-kebab-default.svg";
 import { v4 as uuidv4 } from "uuid";
 
 import InventoryCard from "./InventoryCard";
 
-const Warehouses = ({ location, inventory, match }) => {
+const Warehouses = ({ location, inventory, match, getInventoryList }) => {
   const capitalFirst = string => {
     let word = string[0].toUpperCase() + string.slice(1);
     return word;
@@ -29,7 +28,7 @@ const Warehouses = ({ location, inventory, match }) => {
               province={location[warehouseName].province}
               quantity={inventory[index].product[warehouseName]}
               warehouseName={warehouseName}
-              getInventoryList={inventory}
+              getInventoryList={getInventoryList}
               key={uuidv4()}
             />
           );
