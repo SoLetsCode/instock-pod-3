@@ -3,6 +3,7 @@ import backArrowIcon from "../assets/icons/SVG/icon-back-arrow.svg";
 import kebabIcon from "../assets/icons/SVG/icon-kebab-default.svg";
 import { v4 as uuidv4 } from "uuid";
 
+
 import InventoryCard from "./InventoryCard";
 
 const Warehouses = ({ location, inventory, match }) => {
@@ -77,15 +78,17 @@ const Warehouses = ({ location, inventory, match }) => {
                     <div>{location[warehouse].email}</div>
                   </div>
                 </div>
-              </div>
+              </section>
             </section>
           </section>
         </section>
+
         {/* adding inventory list here */}
         <div>{inventoryList}</div>
       </section>
     )
   );
+
 };
 
 export default Warehouses;

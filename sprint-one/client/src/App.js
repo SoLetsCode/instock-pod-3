@@ -66,6 +66,8 @@ class App extends Component {
   };
 
   render() {
+    if (Object.keys(this.state.location).length === 0)
+      return <h2>Loading...</h2>;
     return (
       <>
         <Router>
@@ -103,7 +105,6 @@ class App extends Component {
                 />
               )}
             />
-
             <Route path="/location">
               <Locations
                 inventory={this.state.inventory}
