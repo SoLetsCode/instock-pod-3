@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // IMAGES
 import magIcon from "../assets/icons/SVG/icon-search.svg";
 import arrowRtIcon from "../assets/icons/SVG/icon-arrow-right.svg";
+
 // FUNCTIONS
 // Component Header
 const ComponentHeader = () => {
@@ -44,7 +45,9 @@ const TableBody = location => {
         <div className="locations__data-warehouse-segment locations__data-warehouse-info">
           <div className="locations__data-warehouse-location-info">
             <h2 className="locations__data-warehouse-location-info-title">
-              {location.location[loc].name}
+              <Link to={`/location/${location.location[loc].name}`}>
+                {location.location[loc].name}
+              </Link>
             </h2>
             <div className="site-icon-wrapper">
               <img className="site-icon" src={arrowRtIcon} />
